@@ -1,7 +1,7 @@
 <script lang="ts">
 	import SocialIcons from "../social-icons.svelte";
 	import ThemeDropdown from "./theme-dropdown.svelte";
-
+    import { useSiteConfig } from "$lib/hooks/use-site-config.svelte.js";
 	const year = new Date().getFullYear();
 </script>
 
@@ -11,7 +11,7 @@
 		<a
 			href="https://github.com/svecosystem"
 			target="_blank"
-			class="underline-offset-2 hover:underline">Svecosystem</a
+			class="underline-offset-2 hover:underline">{useSiteConfig().current.name}</a
 		>
 	</span>
 	<div class="ml-auto flex items-center">
