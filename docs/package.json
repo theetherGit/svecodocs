@@ -14,7 +14,7 @@
 	},
 	"devDependencies": {
 		"@svecodocs/kit": "workspace:*",
-		"@sveltejs/adapter-cloudflare": "^7.2.3",
+		"@sveltejs/adapter-cloudflare": "^7.2.4",
 		"@sveltejs/kit": "catalog:",
 		"@sveltejs/vite-plugin-svelte": "catalog:",
 		"@tailwindcss/vite": "catalog:",

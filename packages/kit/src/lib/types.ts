@@ -20,6 +20,7 @@ export type PrimitiveSVGAttributes = Primitive<SVGAttributes<SVGElement>>;
 export type AnchorNavItem = {
 	title: string;
 	href: string;
+	description: string;
 	icon: Component;
 	disabled?: boolean;
 };
@@ -37,6 +38,7 @@ export type SidebarNavSection = {
 export type SidebarNavItem = {
 	title: string;
 	href?: string;
+	description?: string;
 	disabled?: boolean;
 	external?: boolean;
 	label?: string;
@@ -61,3 +63,10 @@ export type Contributor = {
 	avatar_url: string;
 	contributions: number;
 };
+
+export type Neighbor = Pick<SidebarNavItem, 'href'| 'title' | 'description'>;
+
+export type NavigationNeighbors = {
+	previous: Neighbor | null;
+	next: Neighbor | null;
+}

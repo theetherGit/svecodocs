@@ -1,6 +1,6 @@
 {
-	"name": "@svecodocs/kit",
-	"version": "0.5.1",
+	"name": "@ethercorps/svecodocs",
+	"version": "0.5.2",
 	"scripts": {
 		"build": "pnpm package",
 		"dev": "svelte-package --watch",
@@ -20,7 +20,7 @@
 	"type": "module",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/svecosystem/svecodocs",
+		"url": "https://github.com/theetherGit/svecodocs",
 		"directory": "packages/kit"
 	},
 	"exports": {

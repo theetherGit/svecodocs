@@ -1,8 +1,8 @@
 <script lang="ts">
 	import PageHeader from "$lib/components/layout/page-header/page-header.svelte";
 	import Toc from "$lib/components/toc/toc.svelte";
-	import type { Component, ComponentProps } from "svelte";
-	import type { Contributor, TOCEntry } from "$lib/types.js";
+    import type {Component, ComponentProps, Snippet} from "svelte";
+    import type {Contributor, TOCEntry} from "$lib/types.js";
 	import Metadata from "../metadata.svelte";
 	import ContributorSection from "../contributors-section.svelte";
 
@@ -14,6 +14,7 @@
 		toc,
 		metadata = {},
 		contributors = [],
+        children
 	}: {
 		component: Component;
 		componentProps?: Record<string, unknown>;
@@ -22,6 +23,7 @@
 		toc: TOCEntry[];
 		metadata?: ComponentProps<typeof Metadata>;
 		contributors?: Contributor[];
+        children?: Snippet;
 	} = $props();
 
 	const PageComponent = $derived(component);
@@ -44,5 +46,6 @@
 		<PageHeader {title} {description} />
 		<PageComponent {...componentProps} />
 		<ContributorSection {contributors} />
-	</main>
+        {@render children?.()}
+    </main>
 </div>
