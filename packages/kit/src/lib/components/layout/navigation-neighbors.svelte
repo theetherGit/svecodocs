@@ -19,7 +19,7 @@
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide -mx-1 size-4 shrink-0 rtl:rotate-180"><path d="m15 18-6-6 6-6"></path></svg>
                     <p>{neighbors.previous.title}</p>
                 </div>
-                <p class="text-muted-foreground truncate font-normal">{neighbors.previous.description}</p>
+                <p class="text-muted-foreground truncate w-[90%] font-normal">{neighbors.previous.description}</p>
             </Button>
         {/if}
         {#if neighbors?.next}
@@ -31,7 +31,7 @@
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide -mx-1 size-4 shrink-0 rtl:rotate-180"><path d="m9 18 6-6-6-6"></path></svg>
                     <p>{neighbors.next.title}</p>
                 </div>
-                <p class="text-muted-foreground truncate font-normal">{neighbors.next.description}</p>
+                <p class="text-muted-foreground truncate w-[90%] font-normal">{neighbors.next.description}</p>
             </Button>
         {/if}
     </div>
