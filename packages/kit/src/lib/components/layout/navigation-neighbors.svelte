@@ -9,7 +9,7 @@
     let { neighbors }: Props = $props();
 </script>
 {#if neighbors?.previous || neighbors?.next}
-    <div class="w-full flex gap-2 px-[440px] mb-10">
+    <div class="flex flex-col lg:flex-row w-full mt-6 gap-2">
         {#if neighbors?.previous}
             <Button variant="subtle"
                     href={neighbors.previous.href}

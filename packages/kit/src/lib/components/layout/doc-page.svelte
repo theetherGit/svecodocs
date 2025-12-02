@@ -1,10 +1,11 @@
 <script lang="ts">
 	import PageHeader from "$lib/components/layout/page-header/page-header.svelte";
 	import Toc from "$lib/components/toc/toc.svelte";
-    import type {Component, ComponentProps, Snippet} from "svelte";
-    import type {Contributor, TOCEntry} from "$lib/types.js";
+	import type { Component, ComponentProps } from "svelte";
+	import type { Contributor, NavigationNeighbors, TOCEntry } from "$lib/types.js";
 	import Metadata from "../metadata.svelte";
 	import ContributorSection from "../contributors-section.svelte";
+	import NavigationNeighborButton from "./navigation-neighbors.svelte";
 
 	let {
 		component,
@@ -14,7 +15,7 @@
 		toc,
 		metadata = {},
 		contributors = [],
-        children
+		neighbors,
 	}: {
 		component: Component;
 		componentProps?: Record<string, unknown>;
@@ -23,7 +24,7 @@
 		toc: TOCEntry[];
 		metadata?: ComponentProps<typeof Metadata>;
 		contributors?: Contributor[];
-        children?: Snippet;
+		neighbors?: NavigationNeighbors;
 	} = $props();
 
 	const PageComponent = $derived(component);
@@ -42,10 +43,15 @@
 	<aside>
 		<Toc toc={{ items: tocItems }} type="mobile" />
 	</aside>
-	<main class="mx-auto w-full min-w-0 max-w-[640px] pb-12 2xl:max-w-[760px]" id="main-content">
-		<PageHeader {title} {description} />
-		<PageComponent {...componentProps} />
-		<ContributorSection {contributors} />
-        {@render children?.()}
-    </main>
+	<main
+		class="mx-auto flex h-full w-full min-w-0 max-w-[640px] flex-col pb-12 2xl:max-w-[760px]"
+		id="main-content"
+	>
+		<div class="flex-1">
+			<PageHeader {title} {description} />
+			<PageComponent {...componentProps} />
+			<ContributorSection {contributors} />
+		</div>
+		<NavigationNeighborButton {neighbors} />
+	</main>
 </div>

@@ -2,9 +2,8 @@
 	import { ModeWatcher } from "mode-watcher";
 	import * as Sidebar from "$lib/components/ui/sidebar/index.js";
 	import DocsSidebar from "$lib/components/layout/docs-sidebar.svelte";
-    import NavigationNeighborButton from "./navigation-neighbors.svelte";
     import type { Snippet } from "svelte";
-    import type {Navigation, NavigationNeighbors} from "$lib/types.js";
+    import type { Navigation } from "$lib/types.js";
 	import Header from "./header.svelte";
 	import Footer from "./footer.svelte";
 
@@ -13,8 +12,7 @@
 		navigation,
 		logo,
 		theme,
-        neighbors
-	}: { children?: Snippet; navigation: Navigation; logo: Snippet; theme?: string, neighbors: NavigationNeighbors } = $props();
+	}: { children?: Snippet; navigation: Navigation; logo: Snippet; theme?: string} = $props();
 </script>
 
 <a href="#main-content" class="sr-only">Skip to main content</a>
@@ -29,7 +27,6 @@
 		>
 			{@render children?.()}
 		</div>
-        <NavigationNeighborButton {neighbors} />
         <Footer />
 	</Sidebar.Inset>
 </Sidebar.Provider>
